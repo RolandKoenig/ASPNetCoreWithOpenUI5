@@ -1,0 +1,45 @@
+<mvc:View
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+   xmlns:tnt="sap.tnt"
+   controllerName="rolandk.de.ui5test.controller.App"
+   displayBlock="true">
+  <tnt:ToolPage id="app">
+    <tnt:header>
+      <tnt:ToolHeader>
+        <Button
+          text=""
+          id="sideNavigationToggleButton"
+          icon="sap-icon://menu2"
+          type="Transparent"
+          press="onSideNavButtonPress">
+          <layoutData>
+            <OverflowToolbarLayoutData priority="NeverOverflow"/>
+          </layoutData>
+        </Button>
+        <ToolbarSpacer/>
+        <Title
+          text="{i18n>appTitle}"
+          level="H2"/>
+        <ToolbarSpacer/>
+      </tnt:ToolHeader>
+    </tnt:header>
+    <tnt:sideContent>
+      <tnt:SideNavigation
+        expanded="true"
+        itemSelect="onItemSelect">
+        <tnt:NavigationList>
+          <tnt:NavigationListItem
+            text="{i18n>menu}"
+            icon="sap-icon://home">
+            <tnt:NavigationListItem text="{i18n>menuHome}" key="Home" />
+            <tnt:NavigationListItem text="{i18n>menuUITable}" key="UITable" />
+          </tnt:NavigationListItem>
+        </tnt:NavigationList>
+      </tnt:SideNavigation>
+    </tnt:sideContent>
+    <tnt:mainContents>
+      <App id="mainContents" />
+    </tnt:mainContents>
+  </tnt:ToolPage>
+</mvc:View>

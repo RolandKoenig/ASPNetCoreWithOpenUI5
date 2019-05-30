@@ -1,0 +1,69 @@
+<mvc:View
+   xmlns="sap.m"
+   xmlns:t="sap.ui.table"
+   xmlns:mvc="sap.ui.core.mvc"
+   xmlns:tnt="sap.tnt"
+   controllerName="rolandk.de.ui5test.controller.UITable"
+   displayBlock="true">
+  <Page showHeader="false"
+        class="sapUiContentPadding">
+    <content>
+      <!-- simple odata table
+           see https://blogs.sap.com/2017/05/24/odata-binding-to-a-table-in-xml-fragment-in-sap-ui5/ -->
+      <t:Table id="suppliertable"
+               rows="{
+					       path: '/Persons',
+					       parameters: {operationMode: 'sap.ui.model.odata.OperationMode.Auto'}
+				       }"
+               alternateRowColors="true"
+               visibleRowCount="25"
+               threshold="50"
+               ariaLabelledBy="title"
+               enableSelectAll="false">
+
+        <t:columns>
+          <t:Column sortProperty="ID"
+                    width="2cm">
+            <Text text="ID" />
+            <t:template>
+              <Text text="{ID}" wrapping="false" />
+            </t:template>
+          </t:Column>
+
+          <t:Column sortProperty="Name"
+                    filterProperty="Name">
+            <Text text="Name" />
+            <t:template>
+              <Text text="{Name}" wrapping="false" />
+            </t:template>
+          </t:Column>
+
+          <t:Column sortProperty="Street"
+                    filterProperty="Street">
+            <Text text="Street" />
+            <t:template>
+              <Text text="{Street}" wrapping="false" />
+            </t:template>
+          </t:Column>
+
+          <t:Column sortProperty="ZipCode"
+                    filterProperty="ZipCode">
+            <Text text="ZipCode" />
+            <t:template>
+              <Text text="{ZipCode}" wrapping="false" />
+            </t:template>
+          </t:Column>
+
+          <t:Column sortProperty="City"
+                    filterProperty="City">
+            <Text text="City" />
+            <t:template>
+              <Text text="{City}" wrapping="false" />
+            </t:template>
+          </t:Column>
+        </t:columns>
+
+      </t:Table>
+    </content>
+  </Page>
+</mvc:View>

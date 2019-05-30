@@ -1,0 +1,75 @@
+{
+  "_version": "1.8.0",
+  "sap.app": {
+    "id": "rolandk.de.ui5test",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": false
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "rolandk.de.ui5test.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.30",
+      "libs": {
+        "sap.m": {},
+        "sap.tnt": {},
+        "sap.ui.table": {} 
+      }
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "rolandk.de.ui5test.i18n.i18n"
+        }
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlId": "mainContents",
+        "viewType": "XML",
+        "controlAggregation": "pages",
+        "viewPath": "rolandk.de.ui5test.view",
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "Home",
+          "target": "Home"
+        },
+        {
+          "pattern": "UITable",
+          "name": "UITable",
+          "target": "UITable"
+        }
+      ],
+      "targets": {
+        "Home": {
+          "viewName": "Home"
+        },
+        "UITable": {
+          "viewName": "UITable"
+        }
+      }
+    }
+  }
+}
