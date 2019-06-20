@@ -1,0 +1,16 @@
+<mvc:View
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+   xmlns:tnt="sap.tnt"
+   controllerName="rolandk.de.ui5test.controller.Home"
+   displayBlock="true">
+  <Page showHeader="false"
+        class="sapUiContentPadding">
+    <VBox>
+      <items>
+        <Title text="{i18n>homeTitle}" />
+        <Text text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." />
+      </items>
+    </VBox>
+  </Page>
+</mvc:View>

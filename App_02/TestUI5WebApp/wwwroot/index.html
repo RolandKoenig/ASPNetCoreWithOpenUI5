@@ -9,6 +9,7 @@
             data-sap-ui-theme="sap_belize"
             data-sap-ui-libs="sap.m, sap.tnt, sap.ui.table"
             data-sap-ui-compatVersion="edge"
+            data-sap-ui-xx-bindingSyntax="complex"
             data-sap-ui-preload="async"
             data-sap-ui-resourceroots='{ "rolandk.de.ui5test": "./ui5app/" }'>
     </script>
@@ -16,10 +17,10 @@
     <script type="text/javascript">
         sap.ui.getCore().attachInit(function () {
             sap.ui.require([
-                    "sap/ui/core/ComponentContainer",
-                    "rolandk/de/ui5test/Component"
-                ],
-                function(ComponentContainer, Component) {
+                "sap/ui/core/ComponentContainer",
+                "rolandk/de/ui5test/Component"
+            ],
+                function (ComponentContainer, Component) {
                     new ComponentContainer({
                         height: "100%",
                         component: new Component({
@@ -28,8 +29,8 @@
                     }).placeAt("content");
                 });
         });
-    </script>    
-    
+    </script>
+
 </head>
 <body class="sapUiBody sapUiresponsiveMargin" id="content">
 

@@ -1,0 +1,78 @@
+<mvc:View
+   xmlns="sap.m"
+   xmlns:l="sap.ui.layout"
+   xmlns:core="sap.ui.core"
+   xmlns:mvc="sap.ui.core.mvc"
+   xmlns:tnt="sap.tnt"
+   controllerName="rolandk.de.ui5test.controller.Configuration"
+   displayBlock="true">
+
+  <Page showHeader="false"
+        enableScrolling="true">
+
+    <!-- Main content of the page-->
+    <content>
+      <l:BlockLayout background="Default">
+
+        <l:BlockLayoutRow>
+          <l:BlockLayoutCell title="{i18n>configInfo}">
+            <!-- Simple display only text -->
+            <Label text="{i18n>configMachine}" labelFor="input-machine"/>
+            <Input id="input-machine"
+                   value="{/machineName}"
+                   editable="false"/>
+
+            <!-- Display DateTime value from .Net, formatted in local language
+                 (see CustomFormatters.js) -->
+            <Label text="{i18n>configStartTimestamp}" labelFor="input-starttimestamp"/>
+            <Input id="input-starttimestamp"
+                   value="{
+                       path: '/startTimeStamp',
+                       formatter: '.formatters.jsonDateTime' }"
+                   editable="false"/>
+          </l:BlockLayoutCell>
+        </l:BlockLayoutRow>
+
+        <l:BlockLayoutRow>
+          <l:BlockLayoutCell title="{i18n>configAutoRestart}">
+
+            <!-- Edit for boolean value-->
+            <Switch id="input-autorestart" state="{/autoRestart}" />
+
+            <!-- Edit for enum value 
+                 The property key contains the integer representation of the enum value -->
+            <Label text="{i18n>configAutoRestartInterval}" labelFor="input-autorestartinterval" width="100%" />
+            <Select id="input-autorestartinterval" width="100%"
+                    enabled="{/autoRestart}"
+                    selectedKey="{/autoRestartInterval}">
+              <core:ListItem text="Daily" key="0" />
+              <core:ListItem text="Weekly" key="1" />
+            </Select>
+          </l:BlockLayoutCell>
+
+          <l:BlockLayoutCell title="{i18n>configTimeouts}">
+            <Label text="{i18n>configRequestTimeout}" labelFor="input-requesttimeout"/>
+            <TimePicker id="input-requesttimeout" width="100%"
+                        value="{/requestTimeout}" />
+          </l:BlockLayoutCell>
+
+          <l:BlockLayoutCell>
+          </l:BlockLayoutCell>
+        </l:BlockLayoutRow>
+
+      </l:BlockLayout>
+    </content>
+
+    <!-- Buttons for saving and reset -->
+    <footer>
+      <Toolbar>
+        <ToolbarSpacer/>
+        <Button text="{i18n>configSave}" type="Accept"
+                press="onApplyClick" />
+        <Button text="{i18n>configReset}" type="Reject"
+                press="onResetClick" />
+      </Toolbar>
+    </footer>
+
+  </Page>
+</mvc:View>
